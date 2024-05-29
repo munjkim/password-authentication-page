@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keystroke Authentication using Analog Keyboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-wrapper">
+        <!-- Title Container -->
+        <div class="title-container">
+            <h2>Keystroke Authentication <br> using Analog Keyboard</h2>
+        </div>
+        
+        <!-- Main Content Container -->
+        <div class="container">
+            <form id="authForm">
+                <label for="userName">User name:</label>
+                <input type="text" id="userName" name="userName" required>
+                
+                <label for="userId">User ID:</label>
+                <input type="text" id="userId" name="userId" required>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for confirmation -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <h3>Confirm Your Details</h3>
+            <p id="confirmUserName"></p>
+            <p id="confirmUserId"></p>
+            <button id="goButton">Go</button>
+            <button id="cancelButton">Cancel</button>
+        </div>
+    </div>
+
+    <script src="id_screen.js"></script>
+</body>
+</html>
