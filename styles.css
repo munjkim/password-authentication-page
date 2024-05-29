@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-size: 16px;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+input {
+    width: calc(100% - 24px); /* 패딩을 제외한 전체 너비 */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* 패딩 포함한 너비 계산 */
+}
+
+button {
+    padding: 12px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%; /* 버튼을 전체 너비로 설정 */
+    box-sizing: border-box; /* 패딩 포함한 너비 계산 */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#resultMessage {
+    margin-top: 20px;
+    font-size: 18px;
+    min-height: 24px; /* 메시지 영역의 최소 높이 설정 */
+}
