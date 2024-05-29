@@ -7,6 +7,15 @@ body {
     background-color: #f0f0f0;
     margin: 0;
     font-size: 16px;
+    position: relative; /* Ensure child elements are positioned relative to body */
+}
+
+.container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px; /* Adjust spacing between containers */
 }
 
 .container {
@@ -14,13 +23,52 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
+    max-width: 250px;
     width: 100%;
     text-align: center;
 }
 
-h2 {
-    margin-bottom: 20px;
+.message-container {
+    margin-top: 20px;
+    padding: 0;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    text-align: center;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#resultMessage {
+    margin: 0;
+    font-size: 25px;
+    line-height: 25px;
+}
+
+#correctCount {
+    margin: 0;
+    font-size: 30px;
+    line-height: 30px;
+}
+
+.count-container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 100px; /* Set width of new container */
+    text-align: center;
+    position: absolute; /* Add absolute positioning */
+    top: 20px; /* Adjust distance from the top */
+    right: 20px; /* Adjust distance from the right */
+}
+
+h2, h3 {
+    margin-bottom: 7px;
+    margin-top: 0px;
 }
 
 label {
@@ -30,33 +78,31 @@ label {
 }
 
 input {
-    width: calc(100% - 24px); /* 패딩을 제외한 전체 너비 */
+    width: calc(100% - 24px);
     padding: 12px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    box-sizing: border-box; /* 패딩 포함한 너비 계산 */
+    box-sizing: border-box;
+}
+
+input[type="password"] {
+    font-size: 24px;
 }
 
 button {
-    padding: 12px 12px;
+    padding: 12px 24px;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    width: 100%; /* 버튼을 전체 너비로 설정 */
-    box-sizing: border-box; /* 패딩 포함한 너비 계산 */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 button:hover {
     background-color: #0056b3;
-}
-
-#resultMessage {
-    margin-top: 20px;
-    font-size: 18px;
-    min-height: 24px; /* 메시지 영역의 최소 높이 설정 */
 }
