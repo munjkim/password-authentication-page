@@ -16,6 +16,7 @@ document.getElementById('passwordForm').addEventListener('submit', function(even
     const enteredPassword = document.getElementById('password').value;
     const resultMessage = document.getElementById('resultMessage');
     const correctCountElement = document.getElementById('correctCount');
+    const passwordInput = document.getElementById('password');
 
     if (enteredPassword === correctPassword && !usedDeleteKey) {
         resultMessage.textContent = 'Password is correct.';
@@ -30,8 +31,13 @@ document.getElementById('passwordForm').addEventListener('submit', function(even
         resultMessage.style.color = 'red';
     }
 
+    
+    passwordInput.disabled = true;
+
     setTimeout(() => {
         resultMessage.textContent = '';
+        passwordInput.disabled = false;
+        passwordInput.focus();
     }, 1000);
 
     document.getElementById('password').value = '';
