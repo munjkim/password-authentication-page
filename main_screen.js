@@ -12,7 +12,7 @@ document.getElementById('password').addEventListener('keydown', function(event) 
 document.getElementById('passwordForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const correctPassword = '12345';
+    const correctPassword = 'Dgist2024!';
     const enteredPassword = document.getElementById('password').value;
     const resultMessage = document.getElementById('resultMessage');
     const correctCountElement = document.getElementById('correctCount');
@@ -33,10 +33,12 @@ document.getElementById('passwordForm').addEventListener('submit', function(even
 
     
     passwordInput.disabled = true;
+    passwordInput.classList.add('input-disabled');  // Add the red class
 
     setTimeout(() => {
         resultMessage.textContent = '';
         passwordInput.disabled = false;
+        passwordInput.classList.remove('input-disabled');  // Remove the red class
         passwordInput.focus();
     }, 1000);
 
@@ -45,6 +47,7 @@ document.getElementById('passwordForm').addEventListener('submit', function(even
 });
 
 document.getElementById('startButton').addEventListener('click', function() {
+    // passwordInput.focus();
     correctCount = 0;
     document.getElementById('correctCount').textContent = correctCount;
     
@@ -59,6 +62,10 @@ document.getElementById('startButton').addEventListener('click', function() {
 
     document.getElementById('startButton').disabled = true;
     document.getElementById('endButton').disabled = false;
+
+    // Apply the sky blue background color
+    document.querySelector('.user-info-container').classList.add('sky-blue-background');
+    document.querySelector('.count-container').classList.add('sky-blue-background');
 });
 
 document.getElementById('endButton').addEventListener('click', function() {

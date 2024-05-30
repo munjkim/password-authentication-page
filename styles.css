@@ -79,6 +79,11 @@ body {
     line-height: 30px;
 }
 
+.input-disabled {
+    background-color: #2a0202;
+    border-color: rgb(255, 0, 0);
+}
+
 .count-container {
     background-color: white;
     padding: 10px;
@@ -215,3 +220,8 @@ button:hover {
 #cancelButton:hover {
     background-color: darkred; /* Darker red on hover */
 }
+
+.sky-blue-background {
+    background-color: rgb(184, 235, 255) !important;
+}
+
