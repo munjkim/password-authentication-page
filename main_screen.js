@@ -15,7 +15,7 @@ document.getElementById('password').addEventListener('keydown', function(event) 
 document.getElementById('passwordForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const correctPassword = 'Dgist2024!';
+    const correctPassword = 'dgistAK9365!';
     const enteredPassword = document.getElementById('password').value;
     const resultMessage = document.getElementById('resultMessage');
     const correctCountElement = document.getElementById('correctCount');
@@ -123,7 +123,10 @@ document.getElementById('endButton').addEventListener('click', function() {
 });
 
 function saveLogDataToCSV(userId, userName, correctAttempts) {
-    const date = new Date();
+    const now = new Date();
+    const kstOffset = 9 * 60;
+    const date = new Date(now.getTime() + (kstOffset * 60 * 1000));
+    
     const dateString = date.toISOString().split('T')[0].replace(/-/g, '');
     const fileName = `${userId}_${userName}_${dateString}_${correctAttempts}.csv`;
 
