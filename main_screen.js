@@ -132,11 +132,13 @@ document.getElementById('endButton').addEventListener('click', function() {
 
     const userName = localStorage.getItem('userName');
     const userId = localStorage.getItem('userId');
+    const userSession = localStorage.getItem('userSession');
     const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
     const correctAttempts = correctCount;
 
     document.getElementById('modalUserName').textContent = `User Name: ${userName}`;
     document.getElementById('modalUserId').textContent = `User ID: ${userId}`;
+    document.getElementById('modalUserSession').textContent = `User Session: ${userSession}`;
     document.getElementById('modalElapsedTime').textContent = `Elapsed Time: ${elapsedTime}s`;
     document.getElementById('modalCorrectAttempts').textContent = `Correct Attempts: ${correctAttempts}`;
     document.getElementById('finishModal').style.display = 'block';
@@ -144,9 +146,10 @@ document.getElementById('endButton').addEventListener('click', function() {
     document.getElementById('finishButton').addEventListener('click', function() {
         localStorage.removeItem('userName');
         localStorage.removeItem('userId');
+        localStorage.removeItem('userSession');
 
         // Save log data to CSV and download
-        saveLogDataToCSV(userId, userName, correctAttempts);
+        saveLogDataToCSV(userId, userName, userSession, correctAttempts);
 
         window.location.href = 'id_screen.html';
     });
@@ -158,13 +161,13 @@ document.getElementById('endButton').addEventListener('click', function() {
     logData = [];
 });
 
-function saveLogDataToCSV(userId, userName, correctAttempts) {
+function saveLogDataToCSV(userId, userName, userSession, correctAttempts) {
     const now = new Date();
     const kstOffset = 9 * 60;
     const date = new Date(now.getTime() + (kstOffset * 60 * 1000));
     
     const dateString = date.toISOString().split('T')[0].replace(/-/g, '');
-    const fileName = `${userId}_${userName}_${dateString}_${correctAttempts}.csv`;
+    const fileName = `${userId}_${userName}_${userSession}_${correctAttempts}.csv`;
 
     let csvContent = "data:text/csv;charset=utf-8,";
     csvContent += "keyEvent,keyCode,timeStamp\n";

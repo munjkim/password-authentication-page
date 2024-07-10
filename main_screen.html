@@ -14,6 +14,7 @@
         <h3>User Information</h3>
         <p id="userName">User name: </p>
         <p id="userId">User ID: </p>
+        <p id="userSession">User Session: </p>
         <p id="elapsedTime">Elapsed time: --s</p>
         <button id="startButton" class="small-button">Start</button>
         <button id="endButton" class="small-button">End</button>
@@ -44,6 +45,7 @@
             <h3>User Information</h3>
             <p id="modalUserName"></p>
             <p id="modalUserId"></p>
+            <p id="modalUserSession"></p>
             <p id="modalElapsedTime"></p>
             <p id="modalCorrectAttempts"></p>
             <button id="finishButton">Save results & Reset</button>
@@ -56,10 +58,12 @@
             // Retrieve user details from localStorage
             const userName = localStorage.getItem('userName');
             const userId = localStorage.getItem('userId');
+            const userSession = localStorage.getItem('userSession');
             
             // Display user details
             document.getElementById('userName').textContent = `User name: ${userName}`;
             document.getElementById('userId').textContent = `User ID: ${userId}`;
+            document.getElementById('userSession').textContent = `User Session: ${userSession}`;
         });
     </script>
 </body>

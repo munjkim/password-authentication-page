@@ -3,14 +3,17 @@ document.getElementById('authForm').addEventListener('submit', function(event) {
 
     const userName = document.getElementById('userName').value;
     const userId = document.getElementById('userId').value;
+    const userSession = document.getElementById('userSession').value;
 
     // Store user details in localStorage
     localStorage.setItem('userName', userName);
     localStorage.setItem('userId', userId);
+    localStorage.setItem('userSession', userSession);
 
     // Display confirmation modal with user details
     document.getElementById('confirmUserName').textContent = `User name: ${userName}`;
     document.getElementById('confirmUserId').textContent = `User ID: ${userId}`;
+    document.getElementById('confirmUserSession').textContent = `User session: ${userSession}`;
     document.getElementById('confirmationModal').style.display = 'block';
 });
 
